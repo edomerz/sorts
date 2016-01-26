@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include "sorts.h"
+	
+int IsBefore(const void *data1, const void *data2);
+
+int main(int argc, char* argv[], char** envp)
+{
+	size_t arr[6] = {5, 2, 4, 6, 1, 3};
+	int i = 0;
+	size_t length = sizeof(arr) / sizeof(size_t);
+	
+	printf("array length:%lu\n", length);
+	
+	for( ; i < length; ++i)
+	{
+		printf("arr[%d]:%lu\n", i, arr[i]);
+	}
+	
+	
+	InsertionSort(arr, length, sizeof(size_t), &IsBefore);
+	
+	for(i = 0; i < length; ++i)
+	{
+		printf("arr[%d]:%lu\n", i, arr[i]);
+	}
+	
+	return(0);
+}
+
+int IsBefore(const void *data1, const void *data2)
+{
+	return((size_t)data1 < (size_t)data2);
+}

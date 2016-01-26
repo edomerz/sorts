@@ -1,0 +1,26 @@
+read:
+counting sort
+radix sort
+stable sort( no swap if the certiria is equal between 2 elements )
+
+ implement counting sort and radix in sorts.c
+ 
+void CountingSort(void *base, 
+				  size_t num_of_elements, 
+				  size_t element_size, 
+				  size_t(*produce_key)(const void *element, void *arg), 
+				  void *arg,
+				  size_t range);
+
+the func pointer produce_key points to a function that produces a key in order to
+be able to group,
+every element maps to a integer key between the given range.
+
+we send every element in our base array to the produce_key function,
+that produce a key using the given arg,
+the key is in the range given;
+
+
+
+ 
+ 
